@@ -5,6 +5,10 @@ from racing import offboard
 from utils import base, racing_env
 from system import system_identification
 
+# 用PID走一遍仿真采集状态与输入数据，然后进行线性回归，得到线性化模型，得到曲线坐标系下的LTI模型
+# 可以考虑分段线性化回归，或者参数化模型AB
+# 这个功能只能工作在vt=a的定值情况？曲线坐标系是否受到vt的影响？
+
 
 def linear_time_invariant():
     # define closed_track

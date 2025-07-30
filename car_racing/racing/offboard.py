@@ -65,13 +65,11 @@ class DynamicBicycleModel(base.DynamicBicycleModel):
         xcurv_est[5] = xcurv[5] + self.timestep * (
             xcurv[0] * np.sin(xcurv[3]) + xcurv[1] * np.cos(xcurv[3])
         )
+        
         xglob_est[0:3] = xglob[0:3]
         xglob_est[3] = xglob[3] + self.timestep * (xglob[2])
         xglob_est[4] = xglob[4] + self.timestep * (
             xglob[0] * np.cos(xglob[3]) - xglob[1] * np.sin(xglob[3])
-        )
-        xglob_est[4] = xglob[4] + self.timestep * (
-            xglob[0] * np.sin(xglob[3]) + xglob[1] * np.cos(xglob[3])
         )
 
         return xcurv_est, xglob_est
