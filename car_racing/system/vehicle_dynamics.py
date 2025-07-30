@@ -37,6 +37,7 @@ def vehicle_dynamics(dynamics_param, curv, xglob, xcurv, delta_t, u):
     xglob_next[4] = X + delta_t * ((vx * np.cos(psi) - vy * np.sin(psi)))
     xglob_next[5] = Y + delta_t * (vx * np.sin(psi) + vy * np.cos(psi))
 
+    # 推断 vx vy wz epsi s ey
     xcurv_next[0] = vx + delta_t * (a - 1 / m * Fyf * np.sin(delta) + wz * vy)
     xcurv_next[1] = vy + delta_t * (1 / m * (Fyf * np.cos(delta) + Fyr) - wz * vx)
     xcurv_next[2] = wz + delta_t * (1 / Iz * (lf * Fyf * np.cos(delta) - lr * Fyr))
