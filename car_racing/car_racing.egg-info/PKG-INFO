@@ -1,10 +1,8 @@
 Metadata-Version: 2.1
-Name: car-racing
+Name: car_racing
 Version: 0.0.0
 Summary: A toolkit to test control and planning problems for car racing simulation environment.
-Home-page: UNKNOWN
 Author: 
-License: UNKNOWN
 Platform: linux
 Platform: unix
 Platform: osx
@@ -12,7 +10,10 @@ Platform: win32
 Platform: cygwin
 Classifier: Programming Language :: Python :: 3.6
 Requires-Python: >=3.6
+Requires-Dist: requests>=2
 Provides-Extra: testing
-
-UNKNOWN
-
+Requires-Dist: pytest>=6.0; extra == "testing"
+Requires-Dist: pytest-cov>=2.0; extra == "testing"
+Requires-Dist: mypy>=0.910; extra == "testing"
+Requires-Dist: flake8>=3.9; extra == "testing"
+Requires-Dist: tox>=3.24; extra == "testing"
